@@ -30,7 +30,7 @@ import translationCheck
 argc = len( sys.argv ) - 1
 
 # INSTRUCTION NOTE : to use easily the localization tool, copy paste the following line and replace the projectFolderPath
-# ./InfiniApp/Utils/localizationTool.py ./projectFolderPath 1
+# ./localizationTool.py projectFolderPath 1
 
 if argc <= 0:
 	print( "usage : scriptName projectFolderPath [shouldCompleteFiles]\n- shouldCompleteFiles : 1 for completing files with missing keys, anything else for no completion" )
