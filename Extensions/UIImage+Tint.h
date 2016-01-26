@@ -3,6 +3,9 @@
 //  Inspired by https://github.com/DZamataev/DZVideoPlayerViewController
 //
 
+#ifndef UIImage_Tint_h
+#define UIImage_Tint_h
+
 #import <UIKit/UIKit.h>
 
 @interface UIImage(Tint)
@@ -16,3 +19,5 @@
 + (UIImage *)tintedImage:(UIImage *)image withColor:(UIColor *)color;
 
 @end
+
+#endif
