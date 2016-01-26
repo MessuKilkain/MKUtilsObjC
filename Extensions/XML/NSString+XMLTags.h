@@ -6,7 +6,7 @@
 #ifndef XML_NSString_XMLTags_h
 #define XML_NSString_XMLTags_h
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 @interface NSString(XMLTags)
 

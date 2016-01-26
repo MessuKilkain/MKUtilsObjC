@@ -7,8 +7,6 @@
 
 #import <Foundation/Foundation.h>
 
-#import "NSString+XMLTags.h"
-
 @interface NSMutableString(XMLTags)
 
 -(void)appendTagStart:(NSString*)tagName;
