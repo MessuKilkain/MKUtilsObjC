@@ -235,7 +235,7 @@ def writeLocalizationFiles( sourceFilesProjectRootFolderPath, outputLocalization
 	
 	# "stdin = findFilesCommand.stdout" is necessary to link subprocesses
 	# genstringsCommand = subprocess.Popen( ["xargs","genstrings","-o",outputLocalizationFolderPath], stdin = findFilesCommand.stdout, stdout = subprocess.PIPE, stderr = subprocess.PIPE )
-	# genstringsCommand = subprocess.Popen( ["xargs","genstrings","-skipTable","InfiniApp","-o",outputLocalizationFolderPath], stdin = findFilesCommand.stdout, stdout = subprocess.PIPE, stderr = subprocess.PIPE )
+	# genstringsCommand = subprocess.Popen( ["xargs","genstrings","-skipTable","ProjectName","-o",outputLocalizationFolderPath], stdin = findFilesCommand.stdout, stdout = subprocess.PIPE, stderr = subprocess.PIPE )
 	genstringsCommand = subprocess.Popen( ["xargs","-0","genstrings","-o",outputLocalizationFolderPath], stdin = findFilesCommand.stdout, stdout = subprocess.PIPE, stderr = subprocess.PIPE )
 	findFilesCommand.stdout.close()
 	(stdoutdata, stderrdata) = genstringsCommand.communicate()
