@@ -48,6 +48,27 @@
     return returnedFloat;
 }
 
+-(NSInteger)integerForKey:(NSString*)keyString orDefault:(NSInteger)defaultInteger
+{
+    NSInteger returnedInteger = defaultInteger;
+    if( keyString != nil )
+    {
+        id valueOfDict = [self objectForKey:keyString];
+        if( valueOfDict != nil )
+        {
+            if( [valueOfDict isKindOfClass:[NSNumber class]] )
+            {
+                returnedInteger = [(NSNumber*)valueOfDict integerValue];
+            }
+            else if( [valueOfDict isKindOfClass:[NSString class]] )
+            {
+                returnedInteger = [(NSString*)valueOfDict integerValue];
+            }
+        }
+    }
+    return returnedInteger;
+}
+
 -(NSString*)stringForKey:(NSString*)keyString orDefault:(NSString*)defaultString
 {
     NSString* returnedString = defaultString;

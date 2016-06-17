@@ -8,6 +8,7 @@
 
 -(BOOL)boolForKey:(NSString*)keyString orDefault:(BOOL)defaultBool;
 -(float)floatForKey:(NSString*)keyString orDefault:(float)defaultFloat;
+-(NSInteger)integerForKey:(NSString*)keyString orDefault:(NSInteger)defaultInteger;
 -(NSString*)stringForKey:(NSString*)keyString orDefault:(NSString*)defaultString;
 -(id)idFromString:(NSString*)keyString orDefault:(id)defaultValue;
 
