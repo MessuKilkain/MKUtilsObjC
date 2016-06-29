@@ -11,12 +11,12 @@
     NSMutableArray* valuesFound = [NSMutableArray array];
     NSArray* keys = [self allKeys];
     NSUInteger keysCount = [keys count];
-    for( NSUInteger keyIndex = ; keyIndex < keysCount ; keyIndex++ )
+    for( NSUInteger keyIndex = 0 ; keyIndex < keysCount ; keyIndex++ )
     {
         id currentKey = [keys objectAtIndex:keyIndex];
         id currentValue = [self objectForKey:currentKey];
         if(
-           [currentkey respondsToSelector:@selector(isEqual:)]
+           [currentKey respondsToSelector:@selector(isEqual:)]
            && [currentKey isEqual:searchedKey]
            )
         {
