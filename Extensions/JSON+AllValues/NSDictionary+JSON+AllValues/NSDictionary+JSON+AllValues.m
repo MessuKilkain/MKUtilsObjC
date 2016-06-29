@@ -4,6 +4,8 @@
 
 #import "NSDIctionary+JSON+AllValues.h"
 
+#import "NSArray+JSON+AllValues.h"
+
 @implementation NSDictionary(JSON_AllValues)
 
 -(NSArray*)allRecursiveValuesForKey:(id)searchedKey
@@ -15,6 +17,8 @@
     {
         id currentKey = [keys objectAtIndex:keyIndex];
         id currentValue = [self objectForKey:currentKey];
+        // NSLog(@"cKey : %@",currentKey);
+        // NSLog(@"cValue : %@",currentValue);
         if(
            [currentKey respondsToSelector:@selector(isEqual:)]
            && [currentKey isEqual:searchedKey]
@@ -22,13 +26,18 @@
         {
             [valuesFound addObject:currentValue];
         }
-        if(
-           [currentValue respondsToSelector:@selector(isKindOfClass:)]
-           && [currentValue isKindOfClass:[NSDictionary class]]
-           )
+        if( [currentValue respondsToSelector:@selector(isKindOfClass:)] )
         {
-            NSDictionary* currentDictionary = (NSDictionary*)currentValue;
-            [valuesFound addObjectsFromArray:[currentDictionary allRecursiveValuesForKey:searchedKey]];
+            if( [currentValue isKindOfClass:[NSDictionary class]] )
+            {
+                NSDictionary* currentDictionary = (NSDictionary*)currentValue;
+                [valuesFound addObjectsFromArray:[currentDictionary allRecursiveValuesForKey:searchedKey]];
+            }
+            if( [currentValue isKindOfClass:[NSArray class]] )
+            {
+                NSArray* currentArray = (NSArray*)currentValue;
+                [valuesFound addObjectsFromArray:[currentArray allRecursiveValuesForKey:searchedKey]];
+            }
         }
     }
     return valuesFound;
