@@ -2,6 +2,8 @@
 //  MKCacheFileBased+FileSize.m
 //
 
+#if __has_include("MKCacheFileBased.h")
+
 #import "MKCacheFileBased+FileSize.h"
 
 @implementation MKCacheFileBased(FileSize)
@@ -21,3 +23,5 @@
 }
 
 @end
+
+#endif

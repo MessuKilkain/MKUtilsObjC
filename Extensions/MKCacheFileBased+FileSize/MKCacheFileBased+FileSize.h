@@ -2,6 +2,8 @@
 //  MKCacheFileBased+FileSize.h
 //
 
+#if __has_include("MKCacheFileBased.h")
+
 #import "MKCacheFileBased.h"
 #import "NSURL+FileSize.h"
 
@@ -18,3 +20,5 @@
 -(unsigned long long)cacheFileSize;
 
 @end
+
+#endif
