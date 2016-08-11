@@ -86,6 +86,23 @@
     return returnedString;
 }
 
+-(NSArray*)arrayForKeyString:(NSString*)keyString orDefault:(NSArray*)defaultValue
+{
+    NSArray* returnedValue = defaultValue;
+    if( keyString != nil )
+    {
+        id valueOfDict = [self objectForKey:keyString];
+        if( valueOfDict != nil )
+        {
+            if( [valueOfDict isKindOfClass:[NSArray class]] )
+            {
+                returnedValue = valueOfDict;
+            }
+        }
+    }
+    return returnedValue;
+}
+
 -(id)idForKeyString:(NSString*)keyString orDefault:(id)defaultValue
 {
     id returnedValue = defaultValue;
