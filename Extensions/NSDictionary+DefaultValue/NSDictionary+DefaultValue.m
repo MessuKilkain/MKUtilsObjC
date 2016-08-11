@@ -86,7 +86,7 @@
     return returnedString;
 }
 
--(id)idFromString:(NSString*)keyString orDefault:(id)defaultValue
+-(id)idForKeyString:(NSString*)keyString orDefault:(id)defaultValue
 {
     id returnedValue = defaultValue;
     if( keyString != nil )
