@@ -45,6 +45,7 @@
 #pragma mark - SubActivityIndicator
 
 -(void)setActivityIndicatorViewStyle:(UIActivityIndicatorViewStyle)style;
+-(void)setActivityIndicatorViewColor:(UIColor*)color;
 -(void)activityIndicatorStartAnimating;
 -(void)activityIndicatorStopAnimating;
 

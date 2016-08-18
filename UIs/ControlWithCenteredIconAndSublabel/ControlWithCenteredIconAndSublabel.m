@@ -273,6 +273,11 @@
     [self createSubActivityIndicatorIfNecessary];
     [[self subActivityIndicator] setActivityIndicatorViewStyle:style];
 }
+-(void)setActivityIndicatorViewColor:(UIColor*)color
+{
+    [self createSubActivityIndicatorIfNecessary];
+    [[self subActivityIndicator] setColor:color];
+}
 -(void)activityIndicatorStartAnimating
 {
     [self createSubActivityIndicatorIfNecessary];
