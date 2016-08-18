@@ -637,6 +637,22 @@
         }
     }
 }
+-(void)setActivityIndicatorColor:(UIColor*)color
+{
+    if( [self buttons] != nil )
+    {
+        NSUInteger numberOfButtons = [[self buttons] count];
+        NSArray* buttonsList = [[self buttons] allValues];
+        for( NSUInteger buttonIndexInRow = 0 ; buttonIndexInRow < numberOfButtons ; buttonIndexInRow++ )
+        {
+            GridOfSimpleButtons_Cell* buttonToChange = [buttonsList objectAtIndex:buttonIndexInRow];
+            if( buttonToChange != nil )
+            {
+                [buttonToChange setActivityIndicatorViewColor:color];
+            }
+        }
+    }
+}
 
 #pragma mark - Button specific
 
@@ -813,6 +829,20 @@
     else
     {
         [buttonToChange setActivityIndicatorViewStyle:style];
+    }
+}
+
+-(void)setActivityIndicatorColor:(UIColor*)color forButtonX:(NSInteger)xPos y:(NSInteger)yPos
+{
+    GridOfSimpleButtons_Cell* buttonToChange = [self buttonForX:xPos y:yPos];
+    
+    if( buttonToChange == nil )
+    {
+        // NSLog( @"No button for coords X:%ld Y:%ld", (long)xPos, (long)yPos );
+    }
+    else
+    {
+        [buttonToChange setActivityIndicatorViewColor:color];
     }
 }
 

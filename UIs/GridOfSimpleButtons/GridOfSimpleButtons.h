@@ -109,6 +109,7 @@
 -(void)setImageSize:(CGSize)imageSize;
 
 -(void)setActivityIndicatorStyle:(UIActivityIndicatorViewStyle)style;
+-(void)setActivityIndicatorColor:(UIColor*)color;
 
 #pragma mark - Button specific - Init
 
@@ -138,6 +139,7 @@
 -(void)setImageSize:(CGSize)imageSize forButtonX:(NSInteger)xPos y:(NSInteger)yPos;
 
 -(void)setActivityIndicatorStyle:(UIActivityIndicatorViewStyle)style forButtonX:(NSInteger)xPos y:(NSInteger)yPos;
+-(void)setActivityIndicatorColor:(UIColor*)color forButtonX:(NSInteger)xPos y:(NSInteger)yPos;
 -(void)activityIndicatorStartAnimatingForButtonX:(NSInteger)xPos y:(NSInteger)yPos;
 -(void)activityIndicatorStopAnimatingForButtonX:(NSInteger)xPos y:(NSInteger)yPos;
 
