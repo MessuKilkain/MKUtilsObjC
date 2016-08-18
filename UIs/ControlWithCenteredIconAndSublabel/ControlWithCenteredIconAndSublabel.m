@@ -265,6 +265,7 @@
         [activityIndicator centerInContainer];
         [activityIndicator setHidesWhenStopped:YES];
         [activityIndicator stopAnimating];
+        [activityIndicator setUserInteractionEnabled:NO];
     }
 }
 
